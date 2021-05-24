@@ -2,8 +2,8 @@ from twilio.rest import Client
 from nsetools import Nse
 import time
 
-account_sid = 'AC67f2e595460b7b816d0ae8c062c63402'
-auth_token = '85f566723e340c606635de03d2617f9f'
+account_sid = 'Twilio SID'
+auth_token = 'Twilio token'
 client = Client(account_sid, auth_token)
 nse = Nse()
 
@@ -24,10 +24,10 @@ def send_msg():
             ans[i.capitalize()] = q[i]
     res = ans['Lastprice']
     message = client.messages.create(
-        from_='whatsapp:+14155238886',
+        from_='whatsapp:Twilio no.',
         body="✨🤍✨----------|(GAIL)|----------✨🤍✨" + "\n" + "                                  :->  " + str(res) + "  <-:                                  " + "\n" + "✨🤍✨--------Thank  You--------✨🤍✨",
         # body="\n".join("{!r}  :  {!r},".format(k, v) for k, v in ans.items())+"\n"+"All The Best...Have a Great Day.",
-        to='whatsapp:+919325145178'
+        to='whatsapp: Your whats app no.'
     )
     print(message.sid)
 
